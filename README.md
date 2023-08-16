@@ -22,6 +22,10 @@ sudo chown -R your_username:your_group themes
 sudo chmod -R ug+rw themes
 ```
 
+Likewise, we might have to explicitly allow uploads by clients:
+
+`sudo chmod -R ugo+rwx wp_data/wp-content/uploads`
+
 ### Start, Stop, Destroy
 
 - `npm start` (re)starts the local WordPress server
