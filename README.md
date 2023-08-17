@@ -44,6 +44,10 @@ https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/
 
 https://fullsiteediting.com/lessons/theme-json-typography-options/#using-the-web-fonts-api-with-theme-json
 
+#### full site editing child themes
+
+https://fullsiteediting.com/lessons/child-themes/
+
 ### Origin and ALternatives
 
 This respository is based on a fork of [wp_cli_docker](https://github.com/openmindculture/wp_cli_docker) and follows the opposite direction of the classic / hybrid [wp_template_opinionated](https://github.com/openmindculture/wp_template_opinionated) theme template.
