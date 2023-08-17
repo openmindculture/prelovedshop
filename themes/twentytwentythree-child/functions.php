@@ -20,22 +20,22 @@ function my_child_enqueue_styles() {
 
 add_theme_support( 'editor-color-palette', array(
 	array(
-		'name'  => __( 'Blue', 'ea_genesis_child' ),
+		'name'  => __( 'Blue', 'twentytwentythree-child' ),
 		'slug'  => 'blue',
 		'color'	=> '#59BACC',
 	),
 	array(
-		'name'  => __( 'Green', 'ea_genesis_child' ),
+		'name'  => __( 'Green', 'twentytwentythree-child' ),
 		'slug'  => 'green',
 		'color' => '#58AD69',
 	),
 	array(
-		'name'  => __( 'Orange', 'ea_genesis_child' ),
+		'name'  => __( 'Orange', 'twentytwentythree-child' ),
 		'slug'  => 'orange',
 		'color' => '#FFBC49',
 	),
 	array(
-		'name'	=> __( 'Red', 'ea_genesis_child' ),
+		'name'	=> __( 'Red', 'twentytwentythree-child' ),
 		'slug'	=> 'red',
 		'color'	=> '#E2574C',
 	),
