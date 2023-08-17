@@ -34,7 +34,17 @@ Likewise, we might have to explicitly allow uploads by clients:
 
 ## Further Reading, Alternatives, and Known Issues
 
+### References
+
+#### theme.json Reference (WordPress.org)
+
+https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/
+
+### Origin and ALternatives
+
 This respository is based on a fork of [wp_cli_docker](https://github.com/openmindculture/wp_cli_docker) and follows the opposite direction of the classic / hybrid [wp_template_opinionated](https://github.com/openmindculture/wp_template_opinionated) theme template.
+
+### Issues
 
 The child template is an incomplete stub including references to non-existing assset files in  `themes/twentytwentythree-child/theme.json`. The theme needs to be edited and verified!
 
