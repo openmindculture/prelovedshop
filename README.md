@@ -40,6 +40,10 @@ Likewise, we might have to explicitly allow uploads by clients:
 
 https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/
 
+#### theme.json Font Definition
+
+https://fullsiteediting.com/lessons/theme-json-typography-options/#using-the-web-fonts-api-with-theme-json
+
 ### Origin and ALternatives
 
 This respository is based on a fork of [wp_cli_docker](https://github.com/openmindculture/wp_cli_docker) and follows the opposite direction of the classic / hybrid [wp_template_opinionated](https://github.com/openmindculture/wp_template_opinionated) theme template.
