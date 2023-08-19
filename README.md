@@ -4,6 +4,10 @@ E-commeerceproof of concept and public beta testing page for software, themes an
 
 Current evaluation round: WooCommerce
 
+## TODO / Work in Progress
+
+This is an unfinished stub, based on `wp_cli_docker` (see below). Ideas and learning takeaways from other (open source) projects should be ported back to and collected in this repository.
+
 Since September 2025, prelovedshop runs on WordPress and WooCommerce with a minimally modified Twenty Twenty-Five Child theme based on [wp_block_theme_child](https://github.com/openmindculture/wp_block_theme_child) which is now its upstream source code repository.
 
 Demo content is partially placeholder text, Wikipedia material, and partially actual second-hand products that are or were for sale as individual items, like a pair of black boots, a red designer chair, and a fairly used set of loudspeaker boxes, as well as a piece of Aleppa soap that also serves as a semi-realistic example for using right-to-left written arabic text.
