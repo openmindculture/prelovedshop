@@ -6,6 +6,8 @@ Maintainer: [Ingo Steinke, web developer](https://www.ingo-steinke.com/),
 [certified Shopware Developer](https://www.ingo-steinke.com/services/certified-shopware-developer-berlin.html) 
 and [Shopware Extension Partner](https://store.shopware.com/en/search?manufacturer=a6c4febdaf702cfcbef6008a43ab8476&search=ingo%20steinke&properties=00b8a0c9aacf4e8b4e085afe3819df45|ca1b9eb6b5f340b3b53694d0858e727f|cea1dbd38c8fc53eafa1a66a421897c8&isManufacturerPage=true).
 
+Public beta: https://prelovedshop.de/
+
 This repository contains concepts, placeholder text, and customizations.
 
 Reusable customizations should be moved to independent modules:
