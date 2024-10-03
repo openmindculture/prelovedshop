@@ -16,7 +16,7 @@ Reusable customizations should be moved to independent modules:
 
 - Shopware 6
 - [Cost Transparency](https://github.com/openmindculture/sw-IngoSCostTransparency) extension
-- Apricot masonry theme
+- [Apricot masonry theme](https://github.com/openmindculture/sw-IngoSMasonryTheme)
 - Cypress
 - PhpStorm with
 - Symfony tools
