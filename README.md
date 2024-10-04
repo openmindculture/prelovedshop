@@ -12,15 +12,17 @@ This repository contains concepts, placeholder text, and customizations.
 
 Reusable customizations should be moved to independent modules:
 
-## Requirements, dependencies, recommendations
+## Requirements, Dependencies, Recommendations
 
-- Shopware 6
+- Shopware 6 Development
 - [Cost Transparency](https://github.com/openmindculture/sw-IngoSCostTransparency) extension
 - [Masonry theme](https://github.com/openmindculture/sw-IngoSMasonryTheme)
-- Cypress
+- [Cypress](https://www.cypress.io/)
 - PhpStorm with
-- Symfony tools
-- Shopware tools by shyim
+    - 👍 [Symfony Support](https://plugins.jetbrains.com/plugin/7219-symfony-support) is another commercial extension, 
+    - but [Shyim](https://shyim.me/), one of Shopware's most renowned developer, recommended it recently (in 2024).
+    - 👍 [Shopware 6 Toolbox](https://plugins.jetbrains.com/plugin/17632-shopware-6-toolbox) is released and maintained 
+    - by Shyim and it's free and open source software.
 
 ## Best Practices
 
@@ -28,12 +30,12 @@ Reusable customizations should be moved to independent modules:
 - Shopware backups
 - Shopware test automization
 - Shopware web performance and sustainability
-- WCAG
+- [WCAG (Web Content Accessibility Guidelines)](https://de.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines)
 
 ## Roadmap
 
 - [x] register domain
-- [ ] release placeholder text with backlinks
+- [x] release placeholder text with backlinks
 - [ ] install and configure shop and extensions
 - [ ] add example content and customization
 - [ ] run audits and document results (Lighthouse, WAVE, WebPageTest, WebsiteCarbon, Green Web Check, Domain Authority)
