@@ -24,6 +24,15 @@ Reusable customizations should be moved to independent modules:
     - 👍 [Shopware 6 Toolbox](https://plugins.jetbrains.com/plugin/17632-shopware-6-toolbox) is released and maintained 
     - by Shyim and it's free and open source software.
 
+## Configuration
+
+modify
+
+- `.env`
+  - APP_URL=http://127.0.0.1:8000
+  - DATABASE_URL
+  - MAILER_URL
+
 ## Best Practices
 
 - Shopware customization
