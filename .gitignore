@@ -53,3 +53,7 @@
 
 # Configurations
 .idea
+
+# Secrets
+.env
+.env.local
