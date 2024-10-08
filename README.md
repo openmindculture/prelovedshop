@@ -148,7 +148,40 @@ Workaround:
 
 ### Shopware Backups and Restore
 
+Shopware state in their update documentation that there is no automatic backup option,
+and that users and/or hosters are responsible for creating backups.
+
+A popular option, often recommended in many blogs, is creating an SQL dump and backup all files.
+
+> Make a backup of the MySQL and all your files. It is simple as that. If you want incremental backups,
+> make a full file backup and further only store changes.
+
+Source: https://forum.shopware.com/t/full-system-backup-procedure/101439
+
+- `mysqldump -h host -u user -p dbname > backup.sql` (see `.env.local` for database credentials)
+- `mysqldump -h host -u user -p --no-tablespaces dbname > backup.sql` (if the above causes an error)
+- zip all files: `zip -r backup.zip prelovedshop`
+- or use rsync: `rsync -av source_directory target_directory`
+
+We should be able to restore our data:
+- `mysql -h host -u user -p dbname < backup.sql`
+- `mv prelovedshop prelovedshop_renamed && unzip backup.zip`
+
+No matter what you did, always clear the cache at the end:
+- `bin/console cache:clear`
+
 ### Shopware Customization
+
+#### Add common product properties
+
+How to add fields to specify size, color, or ISBN easily in a recommended or common way (without variations)?
+
+- Add appropriate properties in the UI or keep helpful ones when deleting demo data.
+- Shouldn't we better ensure them programmatically in a plugin, like we did with cost transparency?
+
+#### Show a selection of all products on the home page
+
+- use dynamic product groups
 
 ### Shopware Test Automization
 
