@@ -118,6 +118,9 @@ only when necessary.
 > Internal Server Error: Allowed memory size of ... bytes exhausted (tried to allocate ...
 
 - raise the default memory limit for web applications in your virtual host setting
+- try to raise the default memory limit in `.htaccess` e.g. `php_value memory_limit 512M` (caused Internal Server Error)
+- try to raise it in `php.ini`: `memory_limit=512M` (had no effect)
+- try to raise it in `.user.ini`: `memory_limit=512M` (had no effect)
 - use the command-line instead of the admin UI and specify the memory limit explicitly
 - retry (sometimes, the second try succeeds, maybe thanks to cached partial results of the first try)
 
@@ -125,8 +128,13 @@ only when necessary.
 
 Logging into the shop account to activate the extension store might [fail with different error messages for various reasons](https://stackoverflow.com/questions/74530621/shopware-6-store-activation-causes-generic-error-message-in-admin-ui). Preferably we should use the CLI, not the UI, as well.
 
-- Requirement: the shop domain must be registered in the shopware account (which should have happened when selecting "create new shop" in the installation wizard.
-- We can try variations of our customer number or credentials, as nobody seems capable of answering [how to find one's ShopwareID](https://forum.shopware.com/t/shopware-id-wo-finde-ich-diese/68515/8), see [Activate Extension store fails with Internal server error](https://forum.shopware.com/t/activate-extension-store-fails-with-internal-server-error/96605/10). We can try something along those lines (and never use the `--password` to prevent storing it in our bash history):
+- Requirement: the shop domain must be registered in the shopware account (which should have happened when selecting
+  "create new shop" in the installation wizard.
+- secret requirment: add a "verification hash" using a sw-domain-hash.html, but that file should be generated dynamically
+  as soon as a hash has been entered in the backend. (worked: https://prelovedshop.de/sw-domain-hash.html)
+- We can try variations of our customer number or credentials, as nobody seems capable of answering
+  [how to find one's ShopwareID](https://forum.shopware.com/t/shopware-id-wo-finde-ich-diese/68515/8),
+  see [Activate Extension store fails with Internal server error](https://forum.shopware.com/t/activate-extension-store-fails-with-internal-server-error/96605/10). We can try something along those lines (and never use the `--password` to prevent storing it in our bash history):
 
 - `bin/console store:login --user 123456`
 - `bin/console store:login -i 123456`
