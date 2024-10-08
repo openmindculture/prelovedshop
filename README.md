@@ -140,19 +140,27 @@ Logging into the shop account to activate the extension store might [fail with d
 - `bin/console store:login -i 123456`
 - `bin/console store:login -i kontakt@prelovedshop.de`
 
+Workaround:
+- upload plugins using FTP
+- install and activate plugins on the command line
+
 ## Best Practices
 
-- Shopware customization
-- Shopware backups
-- Shopware test automization
-- Shopware web performance and sustainability
-- Frontend accessibility: [WCAG (Web Content Accessibility Guidelines)](https://de.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines)
+### Shopware Backups and Restore
+
+### Shopware Customization
+
+### Shopware Test Automization
+
+### Shopware Web Performance and Sustainability
+
+### Frontend Accessibility: [WCAG (Web Content Accessibility Guidelines)](https://de.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines) and SEO
 
 ## Roadmap
 
 - [x] register domain
 - [x] release placeholder text with backlinks
-- [ ] install and configure shop and extensions
+- [x] install and configure shop and extensions
 - [ ] add example content and customization
 - [ ] run audits and document results (Lighthouse, WAVE, WebPageTest, WebsiteCarbon, Green Web Check, Domain Authority)
 - [ ] list and link the shop website to increase incoming backlinks
