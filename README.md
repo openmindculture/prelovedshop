@@ -91,14 +91,9 @@ The secret `.env` files must be ignored by git to prevent publicly exposing serv
   - APP_URL=https://prelovedshop.de
   - DATABASE_URL=mysql://121409m93862_4:db_pass@localhost:3306/121409m93862_4
   - MAILER_DSN=smtp://localhost:465?encryption=ssl&auth_mode=login&username=&password=
+  - COMPOSER_HOME=/var/cache/composer
 
 ### Shopware 6 System Installation
-
-Command with explicit paths and parameters:
-
-`/usr/local/phpfarm/inst/php-8.2.18/bin/php -d memory_limit=512M bin/console system:install --basic-setup`
-
-Short version:
 
 `bin/console system:install --basic-setup`
 
@@ -106,6 +101,36 @@ This installs Shopware and creates a default sales channel with Shopware's defau
 (admin:shopware). Change these credentials after finishing the installation.
 
 Source: https://developer.shopware.com/docs/guides/installation/template.html#local-installation
+
+Finally, map the webserver root to the `public` folder and open
+
+https://prelovedshop.de/admin
+
+in a browser to finish the installation.
+
+### Troubleshooting
+
+> The HOME or COMPOSER_HOME environment variable must be set for composer to run correctly.
+
+Add `COMPOSER_HOME="/var/cache/composer"` to `.env.local` as [suggested on StackOverflow](https://stackoverflow.com/questions/74317137/shopware-6-the-home-or-composer-home-environment-variable-must-be-set-for-comp)
+only when necessary.
+
+> Internal Server Error: Allowed memory size of ... bytes exhausted (tried to allocate ...
+
+- raise the default memory limit for web applications in your virtual host setting
+- use the command-line instead of the admin UI and specify the memory limit explicitly
+- retry (sometimes, the second try succeeds, maybe thanks to cached partial results of the first try)
+
+#### Activate the Shopware store and install recommended extension
+
+Logging into the shop account to activate the extension store might [fail with different error messages for various reasons](https://stackoverflow.com/questions/74530621/shopware-6-store-activation-causes-generic-error-message-in-admin-ui). Preferably we should use the CLI, not the UI, as well.
+
+- Requirement: the shop domain must be registered in the shopware account (which should have happened when selecting "create new shop" in the installation wizard.
+- We can try variations of our customer number or credentials, as nobody seems capable of answering [how to find one's ShopwareID](https://forum.shopware.com/t/shopware-id-wo-finde-ich-diese/68515/8), see [Activate Extension store fails with Internal server error](https://forum.shopware.com/t/activate-extension-store-fails-with-internal-server-error/96605/10). We can try something along those lines (and never use the `--password` to prevent storing it in our bash history):
+
+- `bin/console store:login --user 123456`
+- `bin/console store:login -i 123456`
+- `bin/console store:login -i kontakt@prelovedshop.de`
 
 ## Best Practices
 
