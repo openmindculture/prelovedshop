@@ -8,9 +8,11 @@ and [Shopware Extension Partner](https://store.shopware.com/en/search?manufactur
 
 Public beta: https://prelovedshop.de/
 
+For local development, run a dev setup like dockware like the one preconfigured for [sw-IngoSMasonry theme](https://github.com/openmindculture/sw-IngoSMasonryTheme).
+
 This repository contains concepts, placeholder text, and customizations.
 
-Reusable customizations should be moved to independent modules:
+Reusable customizations should be moved to independent modules.
 
 ## Requirements, Dependencies, Recommendations
 
