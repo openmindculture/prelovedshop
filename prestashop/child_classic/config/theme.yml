@@ -1,0 +1,12 @@
+parent: classic
+name: child_classic
+display_name: PrelovedShop Child theme of classic's theme
+version: 1.0.0
+assets:
+  use_parent_assets: true
+  css:
+    all:
+      - id: custom-lib-style
+        path: assets/css/custom.css
+        media: all
+        priority: 1000
