@@ -8,6 +8,8 @@ Current evaluation round: WooCommerce
 to install themes and plugins, including a simple template skeleton for a Twenty-something child
 theme using the template engine (`theme.json`), block editor and full-site editing.
 
+⚠️ This repository is not actively maintained anymore! Please consider [`openmindculture/wp-impact-theme`](https://github.com/openmindculture/wp-impact-theme/) as a more up-to-date template!
+
 ## TODO / Work in Progress
 
 This is an unfinished stub, based on `wp_cli_docker` (see below). Ideas and learning takeaways from other (open source)
