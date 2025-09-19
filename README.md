@@ -2,11 +2,18 @@
 
 E-commeerceproof of concept and public beta testing page for software, themes and extensions.
 
-Current evaluation round:
+Current evaluation round: WooCommerce
 
-## Prestashop vs. Shopware
+## Prestashop vs. Shopware vs. WooCommerce
 
 Public beta: https://prelovedshop.de/
+
+### History, Archives
+
+- WooCommerce (2025)
+- PrestaShop (2025)
+- Shopware (2024)
+- [Placeholder](https://web.archive.org/web/20241113091206/https://www.prelovedshop.de/) (2024)
 
 ### Prestashop Setup
 
