@@ -1,9 +1,6 @@
 .env
 docker-compose.override.yml
-node_modules
-vendor
 .vscode
-.idea
 Thumbs.db
 Thumbs.db:encryptable
 Desktop.ini
@@ -14,13 +11,9 @@ sw_platform_src
 /bin
 /.web-server-pid
 
-vendor
-node_modules
-
 sw_platform_src
 
-# Configurations and caches
-.idea
+# Custom configurations and caches
 .vscode
 Thumbs.db
 Thumbs.db:encryptable
@@ -28,6 +21,21 @@ Desktop.ini
 .DS_Store
 
 # Secrets
-.env
 .env.local
 
+# Upstream ignore directives
+plugins
+node_modules
+vendor
+data
+wp_data
+wordpress
+.wp-cli
+!.wp-cli/cache
+.idea
+.svn
+
+themes/twentytwentytwo
+themes/twentytwentythree
+themes/twentytwentyfour
+themes/twentytwentyfive

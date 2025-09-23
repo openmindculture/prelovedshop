@@ -58,7 +58,7 @@ async function installCore() {
     log('Installing and configuring Wordpress core and admin...');
     return await compose.run(
         'wordpress-cli',
-        'wp core install --path=/var/www/html --url=http://localhost:8023" --title=TestSetup --admin_user=admin --admin_password=secret --admin_email=foo@bar.com',
+        'wp core install --path=/var/www/html --url=http://localhost:8025" --title=TestSetup --admin_user=admin --admin_password=secret --admin_email=foo@bar.com',
         { cwd: path.join(__dirname), commandOptions: ['--rm'] })
 }
 async function installPlugins() {
@@ -109,7 +109,7 @@ async function installAddonsAndCleanup() {
 
     await compose.run(
         'wordpress-cli',
-        'wp theme delete twentytwentytwo twentytwentyone twentytwenty twentynineteen twentyseventeen twentysixteen twentyfifteen twentyfourteen twentythirteen twentytwelve twentyeleven twentyten',
+        'wp theme delete twentytwentyfour twentytwentytwo twentytwentyone twentytwenty twentynineteen twentyseventeen twentysixteen twentyfifteen twentyfourteen twentythirteen twentytwelve twentyeleven twentyten',
         { cwd: path.join(__dirname), commandOptions: ['--rm'] })
         .then(
             () => { log('Deleted unnecessary themes')},
