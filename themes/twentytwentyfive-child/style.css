@@ -11,3 +11,24 @@ Tested up to: 6.8.2
 Requires PHP: 7.2
 Version: 1.0.2
 */
+
+html, body {
+    font-family: Manrope, Lato, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #ffe8b7; /* same as --wp--preset--color-sandy-yellow */
+    color: #011b3b; /* same as --wp--preset--color-contrast */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Marope, Lato, Helvetica, sans-serif;
+    letter-spacing: 0.125rem;
+}
+
+#header .header-top {
+    background-color: peachpuff; /* same as --wp--preset--color--base */
+    padding-top: 0;
+}
+
+.product-information .product-description p {
+    font-size: 18px;
+}
