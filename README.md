@@ -273,6 +273,19 @@ To synchronize/pull upstream updates, we can use it similar to working with bran
 - `git fetch upstream`
 - `git merge upstream/main --allow-unrelated-histories`
 
+When a merge causes a conflict, you can
+
+- `git checkout --ours path/to/file` to keep the local file and discard the incoming remote, or
+- `git checkout --theirs path/to/file` to accept the incoming to overwrite an existing local file,
+- or edit (text files) manually,
+
+then:
+
+- `git add .`
+- `git merge --continue`
+
+and avoid unnecessarily editing existing files in the upstream template repository!
+
 ### WP child theme with custom title
 
 You can change the display name and screenshot to make the theme appear as an individual customer theme, while the technical name (textdomain) stays twentytwentyfive-child making it a child theme of the official WordPress theme Twenty Twenty-Five.
@@ -296,6 +309,7 @@ Product examples are inspired by actual second hand items that I used to offer a
 Recommendations based on small customer projects in recent years:
 
 - Akismet
+- Complianz
 - Contact Form 7
 - Display Featured Image in Post List
 - Incompatibility Status
@@ -305,7 +319,10 @@ Recommendations based on small customer projects in recent years:
 - WooCommerce
 - Yoast (WP-SEO)
 
-and any image optimization and/or caching plugin, unless your (managed) host already provides that functionality.
+and any image optimization and/or caching plugin, unless your (managed) host already provides that functionality:
+
+- TinyPNG
+- W3 Total Cache
 
 Polylang is a proven plugin for multi-language localization, especially for small sites that might be fine using the free version.
 
