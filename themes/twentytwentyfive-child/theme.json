@@ -30,17 +30,6 @@
 		"color": {
 			"palette": [
 				{
-					"color": "#ffffff",
-					"name": "Base",
-					"slug": "base"
-				},
-				{
-					"color": "#000000",
-					"name": "Contrast",
-					"slug": "contrast"
-				},
-				{
-					"color": "#9DFF20",
 					"color": "#fffaee",
 					"name": "Base (sandy white)",
 					"slug": "base"
@@ -52,34 +41,20 @@
 				},
 				{
 					"color": "#5aa4e1",
->>>>>>> upstream/main
 					"name": "Primary",
 					"slug": "primary"
 				},
 				{
-<<<<<<< HEAD
-					"color": "#345C00",
-=======
 					"color": "#044c88",
->>>>>>> upstream/main
 					"name": "Secondary",
 					"slug": "secondary"
 				},
 				{
-<<<<<<< HEAD
-					"color": "#F6F6F6",
-=======
 					"color": "#12afa9",
->>>>>>> upstream/main
 					"name": "Tertiary",
 					"slug": "tertiary"
 				},
 				{
-<<<<<<< HEAD
-					"color": "#017d63;",
-					"name": "deep-green",
-					"slug": "deep-green"
-=======
 					"color": "#030f63;",
 					"name": "dark midnight blue",
 					"slug": "dark-midnight-blue"
@@ -123,7 +98,6 @@
 					"color": "#000000;",
 					"name": "black",
 					"slug": "black"
->>>>>>> upstream/main
 				}
 			]
 		},
@@ -186,15 +160,6 @@
 							"fontFamily": "Atkinson Hyperlegible",
 							"fontStretch": "normal",
 							"fontStyle": "normal",
-<<<<<<< HEAD
-							"fontWeight": "400",
-							"src": [
-								"file:./fonts/Atkinson-Hyperlegible-Bold-102a.woff2"
-							]
-						},
-						{
-							"fontFamily": "DM Sans",
-=======
 							"fontWeight": "700",
 							"src": [
 								"file:./fonts/atkinson-Hyperlegible-Bold-102a.woff2"
@@ -211,18 +176,10 @@
 						},
 						{
 							"fontFamily": "Atkinson Hyperlegible",
->>>>>>> upstream/main
 							"fontStretch": "normal",
 							"fontStyle": "italic",
 							"fontWeight": "400",
 							"src": [
-<<<<<<< HEAD
-								"file:./fonts/dm-sans/DMSans-Regular-Italic.woff2"
-							]
-						},
-						{
-							"fontFamily": "DM Sans",
-=======
 								"file:./fonts/atkinson-Hyperlegible-Italic-102a.woff2"
 							]
 						},
@@ -245,35 +202,10 @@
 					"fontFace": [
 						{
 							"fontFamily": "Markazi Text",
->>>>>>> upstream/main
 							"fontStretch": "normal",
 							"fontStyle": "normal",
 							"fontWeight": "700",
 							"src": [
-<<<<<<< HEAD
-								"file:./assets/fonts/dm-sans/DMSans-Bold.woff2"
-							]
-						},
-						{
-							"fontFamily": "DM Sans",
-							"fontStretch": "normal",
-							"fontStyle": "italic",
-							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/dm-sans/DMSans-Bold-Italic.woff2"
-							]
-						}
-					],
-					"fontFamily": "\"DM Sans\", sans-serif",
-					"name": "DM Sans",
-					"slug": "dm-sans"
-				},
-				{
-					"fontFace": [
-						{
-							"fontDisplay": "block",
-							"fontFamily": "IBM Plex Mono",
-=======
 								"file:./fonts/markazi-text-v28-arabic_latin_latin-ext-700.woff2"
 							]
 						},
@@ -296,75 +228,19 @@
 					"fontFace": [
 						{
 							"fontFamily": "Nunito",
->>>>>>> upstream/main
 							"fontStretch": "normal",
 							"fontStyle": "normal",
 							"fontWeight": "300",
 							"src": [
-<<<<<<< HEAD
-								"file:./assets/fonts/ibm-plex-mono/IBMPlexMono-Light.woff2"
-							]
-						},
-						{
-							"fontDisplay": "block",
-							"fontFamily": "IBM Plex Mono",
-							"fontStretch": "normal",
-							"fontStyle": "normal",
-							"fontWeight": "400",
-							"src": [
-								"file:./assets/fonts/ibm-plex-mono/IBMPlexMono-Regular.woff2"
-							]
-						},
-						{
-							"fontDisplay": "block",
-							"fontFamily": "IBM Plex Mono",
-							"fontStretch": "normal",
-							"fontStyle": "italic",
-							"fontWeight": "400",
-							"src": [
-								"file:./assets/fonts/ibm-plex-mono/IBMPlexMono-Italic.woff2"
-							]
-						},
-						{
-							"fontDisplay": "block",
-							"fontFamily": "IBM Plex Mono",
-=======
 								"file:./fonts/nunito-v26-latin-300.woff2"
 							]
 						},
 						{
 							"fontFamily": "Nunito",
->>>>>>> upstream/main
 							"fontStretch": "normal",
 							"fontStyle": "normal",
 							"fontWeight": "700",
 							"src": [
-<<<<<<< HEAD
-								"file:./assets/fonts/ibm-plex-mono/IBMPlexMono-Bold.woff2"
-							]
-						}
-					],
-					"fontFamily": "'IBM Plex Mono', monospace",
-					"name": "IBM Plex Mono",
-					"slug": "ibm-plex-mono"
-				},
-				{
-					"fontFace": [
-						{
-							"fontFamily": "Inter",
-							"fontStretch": "normal",
-							"fontStyle": "normal",
-							"fontWeight": "200 900",
-							"src": [
-								"file:./assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf"
-							]
-						}
-					],
-					"fontFamily": "\"Inter\", sans-serif",
-					"name": "Inter",
-					"slug": "inter"
-				},
-=======
 								"file:./fonts/nunito-v26-latin-700.woff2"
 							]
 						}
@@ -417,39 +293,10 @@
 					"slug": "roboto-slab-black"
 				},
 
->>>>>>> upstream/main
 				{
 					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
 					"name": "System Font",
 					"slug": "system-font"
-<<<<<<< HEAD
-				},
-				{
-					"fontFace": [
-						{
-							"fontFamily": "Source Serif Pro",
-							"fontStretch": "normal",
-							"fontStyle": "normal",
-							"fontWeight": "200 900",
-							"src": [
-								"file:./assets/fonts/source-serif-pro/SourceSerif4Variable-Roman.ttf.woff2"
-							]
-						},
-						{
-							"fontFamily": "Source Serif Pro",
-							"fontStretch": "normal",
-							"fontStyle": "italic",
-							"fontWeight": "200 900",
-							"src": [
-								"file:./assets/fonts/source-serif-pro/SourceSerif4Variable-Italic.ttf.woff2"
-							]
-						}
-					],
-					"fontFamily": "\"Source Serif Pro\", serif",
-					"name": "Source Serif Pro",
-					"slug": "source-serif-pro"
-=======
->>>>>>> upstream/main
 				}
 			],
 			"fontSizes": [
