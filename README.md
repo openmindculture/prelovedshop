@@ -384,6 +384,12 @@ optionally:
 - custom scripts
 - custom blocks, block variations, or template parts
 
+#### theme.json customization
+
+Copy the existing theme.json to your downstream child theme repository, delete what you don't need and add or modify remaining values as you need.
+
+See the detailed instructions and information about fonts, colors etc. in the section below.
+
 ## Further Reading, Alternatives, and Known Issues
 
 ### References
@@ -404,11 +410,24 @@ Popular pairings include Lora, Alegreya, Roboto and Open Sans. Noto is known as 
 
 Markazi Text is a free font found on Google Fonts useful for an elegant but readable Arabic business site. Roman letters have serifs and a similar overall appearance. Use the Aleppo Soap example product for a preview.
 
+Manrope is a free variable sans font using font variation axis, thus there is one web font file, but we need to specify additional `fontVariationSettings` in our `theme.json` `fontFamilies` `fontFace` definitions. The included example uses a western/latin + cyrillic character set, probably missing arabic and eastern asian glyphs, with certain predefined font weights and slants so that it acts like when using different distinct fixed font files. **TODO**: check if and how WordPress 6.8+ supports variable fonts more flexible for fluid typography and seamless settings! 
+
 Atkinson Hyperlegible might look a little too technical for marketing puropose, however it was designed for maximum legibility in the sense of accessibility and glyph disambiguation.
 
 The example theme uses a combination of Markazi and Nunito, the latter only used for second-level sub-headlines for the sake of demonstrating how to provide different default web fonts in a theme.
 
-#### full site editing child themes
+#### color palette
+
+![color palette example](doc/color-palette-example.png)
+
+The initial example color palette contains more colors that you'd usually need. *Customization TODO*: modify and reduce so that you have:
+- corporate identity design system colors
+- a dark red color for error messages
+- a dark green color for success messages
+- 100% black unless you have a similar dark design color
+- 100% white unless you have a similar light design color
+
+and ideally prevent website content editors to choose color combinations that violate accessible color contrast or cause red–green color vision deficiency issues. Consequentially, avoid including reddish and greenish tones with the same hue and make sure to run  accessibility audits while designing and testing your website.
 
 https://fullsiteediting.com/lessons/child-themes/
 
@@ -470,3 +489,5 @@ The `copyfiles` module causes a warning about its `inflight` dependency which is
 ![screenshot](themes/twentytwentyfive-child/screenshot.png)
 
 TODO: replace that ugly placeholder image with a beautiful screenshot of your actual theme!
+
+Please add the missing fontFamilies fontFace definitions for a WordPress theme JSON in the following format matching the list of font file names below
