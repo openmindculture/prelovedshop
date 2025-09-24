@@ -273,6 +273,8 @@ To synchronize/pull upstream updates, we can use it similar to working with bran
 - `git fetch upstream`
 - `git merge upstream/main --allow-unrelated-histories`
 
+The `-allow-unrelated-histories` is only necessary the first time, then both are considered to be related. 
+
 When a merge causes a conflict, you can
 
 - `git checkout --ours path/to/file` to keep the local file and discard the incoming remote, or
