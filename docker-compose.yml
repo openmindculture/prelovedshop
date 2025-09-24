@@ -1,68 +1,81 @@
 services:
   db:
-    image: mysql:5.7
-    restart: always
+    image: mariadb:latest
+    command: '--default-authentication-plugin=mysql_native_password'
     volumes:
       - db_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: somewordpress
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
+      - MYSQL_ROOT_PASSWORD=wordpress
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=wordpress
+      - MYSQL_PASSWORD=wordpress
+    ports:
+      - "3306:3306"
+    networks:
+      - docker-compose_default
 
   wordpress:
-    depends_on:
-      - db
-    build:
-      context: .
-      dockerfile: docker/WordPress.Dockerfile
-    ports:
-      - "8025:80"
-    restart: always
+    image: wordpress:latest # see https://hub.docker.com/_/wordpress/
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
-      WORDPRESS_TABLE_PREFIX: "wp_"
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_ENVIRONMENT_TYPE', 'local');
+        define('WP_HOME', 'http://localhost:8026');
+        define('WP_SITEURL', 'http://localhost:8026');
       WORDPRESS_DEBUG: 1
       UPLOAD_LIMIT: 64M
     # shared volumes
     volumes:
+      # optionally mount WordPress installation
+      # so that we can use WordPress source for syntax assistance
+      # and inspect other themes and plugins' source code if necessary
       - "./wp_data:/var/www/html"
+      # mount themes redundantly so that we can ignore wp_data in git and search
       - "./themes:/var/www/html/wp-content/themes:rw"
       # increase allowed upload file size so that we can import shop data:
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
-      # uncomment/modify the following line to plugin code available for local search/debugging:
-      # - ./plugins/:/var/www/html/wp-content/plugins
-
-
-  wordpress-cli:
+    ports:
+      - "8026:80"
+    networks:
+      - docker-compose_default
     depends_on:
       - db
-      - wordpress
-    links:
-      - db
+
+  wp-cli:
     image: wordpress:cli
+    volumes:
+      - ./wp_data:/var/www/html
+      - ./themes/kk:/var/www/html/wp-content/themes/kk
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
-      WORDPRESS_TABLE_PREFIX: "wp_"
-      WORDPRESS_DEBUG: 1
-    command: []
+    networks:
+      - docker-compose_default
+    links:
+      - db:db
+    depends_on:
+      - wordpress
+    command: >
+      sh -c '
+      echo "Preparing WordPress installation...";
+      sleep 10;
+      wp core install --url="http://localhost:8026" --title="localhost" --admin_user="admin" --admin_password="secret" --admin_email="info@example.com" --skip-email;
+      sleep 10;
+      wp theme activate twentytwentyfive-child;
+      '
     entrypoint: []
-    # This is required to run wordpress-cli with the same
-    # user-id as wordpress. This way there are no permission problems
-    # when running the cli
-    user: xfs
-    # shared volume
-    volumes:
-      - "./wp_data:/var/www/html"
-      - "./themes:/var/www/html/wp-content/themes:rw"
+
+networks:
+  docker-compose_default:
+    name: docker-compose_default
 
 volumes:
   db_data:
-  # shared volume
+    driver:
+      local
   wp_data:
