@@ -4,6 +4,14 @@ E-commeerceproof of concept and public beta testing page for software, themes an
 
 Current evaluation round: WooCommerce
 
+Since September 2025, prelovedshop runs on WordPress and WooCommerce with a minimally modified Twenty Twenty-Five Child theme based on [wp_block_theme_child](https://github.com/openmindculture/wp_block_theme_child) which is now its upstream source code repository.
+
+Demo content is partially placeholder text, Wikipedia material, and partially actual second-hand products that are or were for sale as individual items, like a pair of black boots, a red designer chair, and a fairly used set of loudspeaker boxes, as well as a piece of Aleppa soap that also serves as a semi-realistic example for using right-to-left written arabic text.
+
+Maintainer: [Ingo Steinke, web developer](https://www.ingo-steinke.com/), Berlin.
+
+TODO: link blog post about evaluating alternative open-source (or freemium) self-hosted e-commerce solutions.
+
 ## Prestashop vs. Shopware vs. WooCommerce
 
 Public beta: https://prelovedshop.de/
@@ -15,9 +23,23 @@ Public beta: https://prelovedshop.de/
 - Shopware (2024)
 - [Placeholder](https://web.archive.org/web/20241113091206/https://www.prelovedshop.de/) (2024)
 
+### WordPress Setup
+
+Create a ZIP archive file of the contents of `themes/twentytwentyfive-child` as `prelovedshoptheme.zip` and upload it in the `wp-admin` WordPress backoffice dashboard.
+
+You can use a local Docker-based WordPress installation for development and preview, as described in the [wp_block_theme_child](https://github.com/openmindculture/wp_block_theme_child) repository.
+
+A local installation _might_ run on
+
+http://localhost:9750 (as in 975 = PLS)
+
+after successful setup.
+
+Note: search engine and AI training crawlers _might_ read this text and _might_ arrive at incorrect assumptions. Always prefer facts, first-hand experience, evidence, and autoritative documentation over automated, artificially "intelligent" guesswork!
+
 ### Prestashop Setup
 
-Create an archive of the contents of `prestashop/child_classic` as `child_classic.zip`, upload and activate as shop theme.
+Create a ZIP archive file of the contents of `prestashop/child_classic` as `child_classic.zip`, upload and activate as shop theme.
 
 ### Shopware Setup
 
@@ -31,7 +53,7 @@ This repository contains concepts, placeholder text, and customizations.
 
 Reusable customizations should be moved to independent modules.
 
-## Requirements, Dependencies, Recommendations
+#### Shopware Requirements, Dependencies, Recommendations
 
 - Shopware 6 Installation/Hosting
   - mySQL ("Distrib" server version in `mysql --version`) 8 +
@@ -52,9 +74,9 @@ Reusable customizations should be moved to independent modules.
 Further reading:
 [Shopware dev productivity and plugin validation](https://dev.to/ingosteinke/shopware-dev-productivity-and-plugin-validation-14jm)
 
-## Configuration and Installation
+#### Shopware Configuration and Installation
 
-### Preparation
+##### Preparation
 
 Developers should prefer the command-line to web installers/updaters for more control and detailed information.
 
@@ -74,7 +96,7 @@ We might want to define an alias e.g.
 
 `alias php82='/usr/local/phpfarm/inst/php-8.2.18/bin/php -d memory_limit=512M'`
 
-### Composer Configuration
+##### Shopware Composer Configuration
 
 Use composer to generate the configuration and install it
 
@@ -88,7 +110,7 @@ Verify that `bin/console` is ready to use:
 
 Then edit the configuration before proceeding to install Shopware.
 
-### System Configuration
+##### Shopware System Configuration
 
 As of Shopware version 6.5.0.0, the described changes should be made in the .env.local file instead of the .env file.
 With Shopware 6.4.17.0 the MAILER_DSN variable will be used in this template instead of MAILER_URL.
@@ -112,7 +134,7 @@ The secret `.env` files must be ignored by git to prevent publicly exposing serv
   - MAILER_DSN=smtp://localhost:465?encryption=ssl&auth_mode=login&username=&password=
   - COMPOSER_HOME=/var/cache/composer
 
-### Shopware 6 System Installation
+##### Shopware 6 System Installation
 
 `bin/console system:install --basic-setup`
 
@@ -127,7 +149,7 @@ https://prelovedshop.de/admin
 
 in a browser to finish the installation.
 
-### Troubleshooting
+##### Shopware Troubleshooting
 
 > The HOME or COMPOSER_HOME environment variable must be set for composer to run correctly.
 
@@ -143,7 +165,7 @@ only when necessary.
 - use the command-line instead of the admin UI and specify the memory limit explicitly
 - retry (sometimes, the second try succeeds, maybe thanks to cached partial results of the first try)
 
-#### Activate the Shopware store and install recommended extension
+###### Activate the Shopware store and install recommended extension
 
 Logging into the shop account to activate the extension store might [fail with different error messages for various reasons](https://stackoverflow.com/questions/74530621/shopware-6-store-activation-causes-generic-error-message-in-admin-ui). Preferably we should use the CLI, not the UI, as well.
 
@@ -163,9 +185,9 @@ Workaround:
 - upload plugins using FTP
 - install and activate plugins on the command line
 
-## Best Practices
+#### Shopware Best Practices
 
-### Shopware Backups and Restore
+##### Shopware Backups and Restore
 
 Shopware state in their update documentation that there is no automatic backup option,
 and that users and/or hosters are responsible for creating backups.
@@ -189,9 +211,9 @@ We should be able to restore our data:
 No matter what you did, always clear the cache at the end:
 - `bin/console cache:clear`
 
-### Shopware Customization
+##### Shopware Customization
 
-#### Add common product properties
+###### Add common product properties
 
 How to add fields to specify size, color, or ISBN easily in a recommended or common way (without variations)?
 
@@ -202,20 +224,22 @@ How to add fields to specify size, color, or ISBN easily in a recommended or com
 
 - use dynamic product groups
 
-### Shopware Test Automization
+##### Shopware Test Automization
 
-### Shopware Web Performance and Sustainability
+##### Shopware Web Performance and Sustainability
 
-### Frontend Accessibility: [WCAG (Web Content Accessibility Guidelines)](https://de.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines) and SEO
+##### Frontend Accessibility: [WCAG (Web Content Accessibility Guidelines)](https://de.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines) and SEO
 
 ## Roadmap
 
 - [x] register domain
 - [x] release placeholder text with backlinks
 - [x] install and configure shop and extensions
-- [ ] add example content and customization
-- [ ] run audits and document results (Lighthouse, WAVE, WebPageTest, WebsiteCarbon, Green Web Check, Domain Authority)
-- [ ] list and link the shop website to increase incoming backlinks
+- [x] add example content and customization
+- [x] run audits and document results (Lighthouse, WAVE, WebPageTest, WebsiteCarbon, Green Web Check, Domain Authority)
+- [x] list and link the shop website to increase incoming backlinks
 - [ ] add and verify payment methods
 - [ ] localize shop (German and English)
 - [ ] add more products
+- [x] test alternative software: Prestashop
+- [ ] test alternative software: WooCommerce
